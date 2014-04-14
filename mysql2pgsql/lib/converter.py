@@ -84,9 +84,9 @@ class Converter(object):
                     queue.put(None)
 
                 def worker():
-                    writer = self.get_writer()
-                    reader = self.get_reader()
                     while True:
+                        writer = self.get_writer()
+                        reader = self.get_reader()
                         table = queue.get()
                         if table is None:
                             return
